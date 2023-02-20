@@ -13,13 +13,15 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := kryo385
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := kryo385
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := kryo385
+TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
 
 # ART
 ART_BUILD_TARGET_NDEBUG := true
@@ -41,13 +43,17 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_OPTIONAL_LD := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm845
-TARGET_KERNEL_CONFIG := vendor/xiaomi/mi845_defconfig
-TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM_IAS=1
+KERNEL_SUPPORTS_LLVM_TOOLS := true
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := trb_clang
 TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/trb_clang
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    LLVM=1 \
+    LLVM_IAS=1 \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument -Wno-reorder-init-list -Wno-implicit-fallthrough -Wno-c99-designator -Wno-implicit-int-float-conversion -Wno-int-in-bool-context -Wno-alloca -Wno-dangling-gsl -Wno-pointer-compare -Wno-final-dtor-non-final-class -Wno-incomplete-setjmp-declaration -Wno-sizeof-array-div -Wno-xor-used-as-pow -fsplit-lto-unit -Wno-c++17-extensions -flax-vector-conversions=all  -Wno-tautological-overlap-compare -Wno-range-loop-analysis -Wno-invalid-partial-specialization -Wno-deprecated-copy -Wno-misleading-indentation -Wno-zero-as-null-pointer-constant -Wno-deprecated-enum-enum-conversion -Wno-deprecated-anon-enum-enum-conversion -Wno-bool-operation -Wno-unused-comparison -Wno-string-compare -Wno-wrong-info -Wno-thread-safety-analysis -Wno-unsequenced -Wno-unknown-warning-option"
+
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm845
