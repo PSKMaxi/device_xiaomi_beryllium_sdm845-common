@@ -1,0 +1,36 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- App Title -->
+    <string name="crdroid_settings_title" translatable="false">Personalizations</string>
+    
+     <!-- Personalization Categories -->
+     <string name="notifications_title">Notifications</string>
+     
+     <!-- Personalization Sub-Categories -->
+     <string name="misc_device_settings_title">Device settings</string>
+     
+     <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right" translatable="false">→</string>
+    <string name="arrow_down" translatable="false">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+    
+    <!-- General strings -->
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
+    <string name="default_string">Default</string>
+    <string name="follow_system_font_string">Follow system font</string>
+    <string name="disabled">Disabled</string>
+    
+     <!-- Battery light settings -->
+    <string name="light_brightness_category">Light brightness settings</string>
+    <string name="battery_light_title">Battery light</string>
+    <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
+    
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_extend_title">Extend compatibility</string>
+    <string name="wifi_hotspot_extend_summary">Helps other devices find this hotspot. Reduces hotspot connection speed.</string>
