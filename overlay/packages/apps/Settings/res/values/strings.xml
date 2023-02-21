@@ -34,3 +34,5 @@
     <!-- WiFi Hotspot -->
     <string name="wifi_hotspot_extend_title">Extend compatibility</string>
     <string name="wifi_hotspot_extend_summary">Helps other devices find this hotspot. Reduces hotspot connection speed.</string>
+    
+<resources>    
